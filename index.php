@@ -117,8 +117,8 @@ foreach ($posts as $post):
         print(array_keys($post)); 
       ?>
       <?php print("test.".h($post['picture'])); ?>
-      <img src="./member_picture/<?php echo h($post['picture']); ?>" width="48" height="48"/>
-      <img src="./member_picture/<?php h($post['picture']); ?>" width="48" height="48"/>
+      <img src="public/member_picture/<?php echo h($post['picture']); ?>" width="48" height="48"/>
+      <img src="public/member_picture/<?php h($post['picture']); ?>" width="48" height="48"/>
     </div>
     <div class="mesg">
     <span class="profile-name"><?php echo h($post['name'] ); ?></span>
