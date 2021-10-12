@@ -110,19 +110,10 @@ foreach ($posts as $post):
 ?>
     <div class="msg">
     <div class="icon">
-      <?php 
-        foreach($post as $key => $value){
-          echo "key:" . $key . ", value:" . $value . "\n";
-        }
-        print(array_keys($post)); 
-      ?>
-      <?php print("test.".h($post['picture'])); ?>
       <img src="public/member_picture/<?php echo h($post['picture']); ?>" width="48" height="48"/>
-      <img src="public/member_picture/<?php h($post['picture']); ?>" width="48" height="48"/>
-    </div>
     <div class="mesg">
     <span class="profile-name"><?php echo h($post['name'] ); ?></span>
-    
+
     <p class="message"><?php echo makeLink(h($post['message'])); ?>[<a class="reply" href="index.php?res=<?php echo h($post['id']); ?>">Re</a>]</p>
     <p><a class="day" href="view.php?id=<?php echo h($post['id']); ?>"><?php echo h($post['created']); ?></a>
     <?php
