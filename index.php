@@ -110,7 +110,12 @@ foreach ($posts as $post):
 ?>
     <div class="msg">
     <div class="icon">
-      <?php print(array_keys($post)); ?>
+      <?php 
+        foreach($post as $key => $value){
+          echo "key:" . $key . ", value:" . $value . "\n";
+        }
+        print(array_keys($post)); 
+      ?>
       <?php print("test.".h($post['picture'])); ?>
       <img src="./member_picture/<?php echo h($post['picture']); ?>" width="48" height="48"/>
       <img src="./member_picture/<?php h($post['picture']); ?>" width="48" height="48"/>
