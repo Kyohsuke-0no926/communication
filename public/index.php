@@ -38,10 +38,13 @@ if (!empty($_POST)) {
 
 	if (empty($error)) {
 		// 画像をアップロードする
-		$image = base64_encode(file_get_contents($_FILES['image']['name']))
-
+		$image_data = base64_encode(file_get_contents($_FILES['image']['name']));
+		$image = date('YmdHis') . $_FILES['image']['name'];	
+		move_uploaded_file($_FILES['image']['tmp_name'], './member_picture/' . $image);
+		
 		$_SESSION['join'] = $_POST;
 		$_SESSION['join']['image'] = $image;
+		$_SESSION['join']['image_data'] = $image_data;
 		header('Location: check.php'); exit();
 	}
 }
