@@ -38,9 +38,8 @@ if (!empty($_POST)) {
 
 	if (empty($error)) {
 		// 画像をアップロードする
-		$image = date('YmdHis') . $_FILES['image']['name'];
-		move_uploaded_file($_FILES['image']['tmp_name'], './member_picture/' . $image);
-		
+		$image = base64_encode(file_get_contents($_FILES['image']['name']))
+
 		$_SESSION['join'] = $_POST;
 		$_SESSION['join']['image'] = $image;
 		header('Location: check.php'); exit();
