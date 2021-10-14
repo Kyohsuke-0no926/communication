@@ -108,31 +108,32 @@ function makeLink($value) {
 <?php
 foreach ($posts as $post):
 ?>
-    <div class="msg">
+  <div class="msg">
     <div class="icon">
       <img src="public/member_picture/<?php echo h($post['picture']); ?>" width="48" height="48"/>
+    </div>
     <div class="mesg">
-    <span class="profile-name"><?php echo h($post['name'] ); ?></span>
+      <span class="profile-name"><?php echo h($post['name'] ); ?></span>
 
-    <p class="message"><?php echo makeLink(h($post['message'])); ?>[<a class="reply" href="index.php?res=<?php echo h($post['id']); ?>">Re</a>]</p>
-    <p><a class="day" href="view.php?id=<?php echo h($post['id']); ?>"><?php echo h($post['created']); ?></a>
-    <?php
-if ($post['reply_post_id'] > 0):
-?>
-<a href="view.php?id=<?php echo h($post['reply_post_id']); ?>">
-返信元のメッセージ</a>
-<?php endif; ?>
-<?php
-if ($_SESSION['id'] == $post['member_id']):
-?>
-[<a class="delete" href="delete.php?id=<?php echo h($post['id']); ?>">削除</a>]
-<?php
-endif;
-?>
-    </p>
-    <div class="clear"></div>
+      <p class="message"><?php echo makeLink(h($post['message'])); ?>[<a class="reply" href="index.php?res=<?php echo h($post['id']); ?>">Re</a>]</p>
+      <p>
+        <a class="day" href="view.php?id=<?php echo h($post['id']); ?>"><?php echo h($post['created']); ?></a>
+        <?php
+          if ($post['reply_post_id'] > 0):
+        ?>
+        <a href="view.php?id=<?php echo h($post['reply_post_id']); ?>">
+        返信元のメッセージ</a>
+        <?php endif; ?>
+        <?php
+        if ($_SESSION['id'] == $post['member_id']):
+        ?>
+        [<a class="delete" href="delete.php?id=<?php echo h($post['id']); ?>">削除</a>]
+        <?php
+        endif;
+        ?>
+      </p>
     </div>
-    </div>
+  </div>
 <?php
 endforeach;
 ?>
