@@ -110,7 +110,6 @@ foreach ($posts as $post):
 ?>
   <div class="msg">
     <div class="icon">
-      <?php echo h($post['picture']); ?>
       <img src="data:image/png;base64,<?php echo h($post['picture']); ?>" width="48" height="48">
       <!-- <img src="public/member_picture/<?php echo h($post['picture']); ?>" width="48" height="48"/> -->
     </div>
