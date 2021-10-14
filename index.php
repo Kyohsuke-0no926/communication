@@ -130,6 +130,7 @@ if ($_SESSION['id'] == $post['member_id']):
 endif;
 ?>
     </p>
+    <div class="clear"></div>
     </div>
     </div>
 <?php
