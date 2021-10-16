@@ -16,7 +16,7 @@ $posts->execute(array($_REQUEST['id']));
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>ひとこと掲示板</title>
+	<title>Communication</title>
 
 	<link rel="stylesheet" href="style2.css?v=2" />
 </head>
@@ -24,7 +24,7 @@ $posts->execute(array($_REQUEST['id']));
 <body>
 <div id="wrap">
   <div id="head">
-    <h1>ひとこと掲示板</h1>
+    <h1>Communication</h1>
   </div>
   <div id="content">
   <p>&laquo;<a href="index.php">一覧にもどる</a></p>
@@ -35,6 +35,7 @@ if ($post = $posts->fetch()):
     <div class="msg">
     <div class="icon">
       <img src="member_picture/<?php echo htmlspecialchars($post['picture'], ENT_QUOTES, 'UTF-8'); ?>" width="48" height="48" />
+      <img src="data:image/png;base64,<?php echo htmlspecialchars($post['picture'], ENT_QUOTES, 'UTF-8'); ?>" width="48" height="48" />
 		</div>
 		<div class="mesg">
 		<span class="profile-name"><?php echo htmlspecialchars($post['name'], ENT_QUOTES, 'UTF-8'); ?></span>
