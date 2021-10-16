@@ -18,7 +18,7 @@ $posts->execute(array($_REQUEST['id']));
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Communication</title>
 
-	<link rel="stylesheet" href="style2.css?v=2" />
+	<link rel="stylesheet" href="style.css?v=2" />
 </head>
 
 <body>
@@ -34,12 +34,11 @@ if ($post = $posts->fetch()):
 
     <div class="msg">
     <div class="icon">
-      <img src="member_picture/<?php echo htmlspecialchars($post['picture'], ENT_QUOTES, 'UTF-8'); ?>" width="48" height="48" />
       <img src="data:image/png;base64,<?php echo htmlspecialchars($post['picture'], ENT_QUOTES, 'UTF-8'); ?>" width="48" height="48" />
 		</div>
 		<div class="mesg">
 		<span class="profile-name"><?php echo htmlspecialchars($post['name'], ENT_QUOTES, 'UTF-8'); ?></span>
-    <?php echo htmlspecialchars($post['message'], ENT_QUOTES, 'UTF-8'); ?>
+    <p class="message"><?php echo htmlspecialchars($post['message'], ENT_QUOTES, 'UTF-8'); ?></p>
     <p class="day"><?php echo htmlspecialchars($post['created'], ENT_QUOTES, 'UTF-8'); ?></p>
     </div>
 <?php
